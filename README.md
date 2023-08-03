@@ -5,12 +5,12 @@ Using the class Gradient_Descent available in the gradient_descent.py file, one 
 
 Gif #1 shows the gradient descent method without line search:
 
-![](https://github.com/gradient_descent_applications/gifs/gradient_descent.gif)
+![](https://github.com/gradient_descent_applications/tree/main/gifs/gradient_descent.gif)
 
 
 Gif #2 shows the gradient descent method with line search:
 
-![](https://github.com/gradient_descent_applications/gifs/gradient_descent_with_line_search.gif)
+![](https://github.com/gradient_descent_applications/tree/main/gifs/gradient_descent_with_line_search.gif)
 
 
 Both gifs show the methods applied to a simple linear regression problem, but it can be generalized to any problem with a weight vector/matrix and a weight gradient function. 
