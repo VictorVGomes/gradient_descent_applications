@@ -13,6 +13,6 @@ Gif #2 shows the gradient descent method with line search:
 ![](https://github.com/VictorVGomes/gradient_descent_applications/blob/main/gifs/gradient_descent_with_line_search.gif?raw=true)
 
 
-Both gifs show the methods applied to a simple linear regression problem, but it can be generalized to any problem with a weight vector/matrix and a weight gradient function. 
+Both gifs show the methods applied to a simple linear regression problem, but it can be generalized to any problem with a weight/vector matrix and a weight gradient function. 
 
 As next steps, the method will be applied to the Logistic Regression problem, in the binary response case.
