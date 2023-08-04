@@ -1,7 +1,4 @@
-import numpy as np, torch, torch.nn as nn, torch.nn.functional as F
-import matplotlib, matplotlib.pyplot as plt, os
-import imageio
-matplotlib.use("Agg")
+import numpy as np
 
 class Gradient_Descent:
     def __init__(
@@ -18,6 +15,8 @@ class Gradient_Descent:
         self.epsilon = epsilon
         self.reached_convergence = False
         self.steps_until_convergence = 0
+        self.weights_by_step = [weights.copy()]
+        self.break_ = False
 
     def line_search(
         self,
@@ -66,7 +65,7 @@ class Gradient_Descent:
             )
         else:
             alpha = 1e-5
-
+        
         self.weights -= alpha * self.grad_weights
 
     def gradient_norm(
@@ -82,17 +81,22 @@ class Gradient_Descent:
         ### and then checking if the norm is close enough to zero
         self.update_weights()
         self.steps_until_convergence += 1
+        
+        if self.iterations:
+            if self.steps_until_convergence >= self.iterations:
+                self.break_ = True
 
         if self.gradient_norm() <= self.epsilon:
             self.reached_convergence = True
 
-    def fit(self, X, y, tau=95 / 100):
+    def fit(self, X, y, tau=95 / 100, iterations=None):
         ###
         self.X = X
         self.y = y
         self.tau = tau
-        self.weights_by_step = [self.weights.copy()]
-        while not self.reached_convergence:
+        self.iterations = iterations
+
+        while not (self.reached_convergence or self.break_):
             self.step()
             self.weights_by_step.append(self.weights.copy())
 
