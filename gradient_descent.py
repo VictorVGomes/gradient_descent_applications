@@ -64,9 +64,7 @@ class Gradient_Descent:
                 current_gradients=self.grad_weights,
             )
         else:
-            alpha = 1e-5
-        
-        self.weights -= alpha * self.grad_weights
+            self.weights -= self.alpha * self.grad_weights
 
     def gradient_norm(
         self,
@@ -89,12 +87,13 @@ class Gradient_Descent:
         if self.gradient_norm() <= self.epsilon:
             self.reached_convergence = True
 
-    def fit(self, X, y, tau=95 / 100, iterations=None):
+    def fit(self, X, y, tau=95 / 100, alpha=1e-5, iterations=None):
         ###
         self.X = X
         self.y = y
         self.tau = tau
         self.iterations = iterations
+        self.alpha = alpha
 
         while not (self.reached_convergence or self.break_):
             self.step()
