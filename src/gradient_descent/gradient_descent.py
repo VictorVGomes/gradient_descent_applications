@@ -172,7 +172,7 @@ def generate_gif(
     frames = [imageio.imread(file_) for file_ in figs]
 
     imageio.mimsave(
-        f"gifs/{gif_name}.gif",
+        f"../gifs/{gif_name}.gif",
         frames,
         "GIF",
         duration=duration,
