@@ -22,7 +22,7 @@ Both gifs show the methods applied to a simple linear regression problem, but it
 
 The next gif shows gradient descent (without line search) for the purpose of finding the MLE for a simple logistic regression.
 
-Derivation is deducted using the Bernoulli distribution and maximizing the likelihood the distribution with respect to some set of parameters $\mathbf{\theta}$.
+Derivation is made using the Bernoulli distribution and maximizing the likelihood of the distribution with respect to some set of parameters $\mathbf{\theta}$.
 
 ![](https://github.com/VictorVGomes/gradient_descent_applications/blob/main/gifs/logistic_regression_gradient_descent.gif?raw=true)
 
